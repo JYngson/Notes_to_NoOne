@@ -9,6 +9,8 @@ export const NavbarBox = styled.section`
   justify-content: space-between;
   width: 100%;
   height: 15vh;
+  background-color: white;
+  color: #779ed7;
 `;
 
 export const NavbarHeader = styled.h1`
@@ -17,12 +19,14 @@ export const NavbarHeader = styled.h1`
 `;
 
 export const NavbarButton = styled.button`
+  display: none;
   width: 10%;
-  height: 100%;
+  height: 85%;
   border: none;
   border-radius: 10px;
-  background-color: #fff51d;
+  background-color: #779ed7;
   font-size: 1.3rem;
+  color: white;
 `;
 
 export const NavbarIcons = styled.div`
@@ -48,3 +52,5 @@ export const NavbarLogout = styled(LogoutCircleR)`
   width: 30px;
   height: 30px;
 `;
+
+

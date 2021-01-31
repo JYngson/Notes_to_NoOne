@@ -1,7 +1,9 @@
 import React, { useRef, useState } from "react";
 import { Form, Button, Card, Alert } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
+import app from "../../../firebase";
 import { Link, useHistory } from "react-router-dom";
+import uuid from "react-uuid";
 
 export default function Signup() {
   const emailRef = useRef();
@@ -22,7 +24,22 @@ export default function Signup() {
     try {
       setError("");
       setLoading(true);
-      await signup(emailRef.current.value, passwordRef.current.value);
+
+      await signup(emailRef.current.value, passwordRef.current.value)
+        .then((res) => {
+          console.log(res);
+          app
+            .database()
+            .ref("users/" + res.user.uid)
+            .set({
+              username: uuid(),
+              email: res.user.email,
+              id: res.user.uid,
+            });
+        })
+        .catch((err) => {
+          console.error(err);
+        });
       history.push("/login");
     } catch {
       setError("Failed to create an account");
