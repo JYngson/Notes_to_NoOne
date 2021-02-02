@@ -50,6 +50,10 @@ export default function Navbar() {
 
     try {
       let user = app.auth().currentUser;
+      let key = app
+        .database()
+        .ref("users/" + user.uid + "/posts")
+        .push().key;
       console.log(user);
       app
         .database()
@@ -58,6 +62,7 @@ export default function Navbar() {
         .update({
           title: e.target.title.value,
           description: e.target.description.value,
+          postId: key,
         });
     } catch {
       setError("Something went horribly, horribly wrong D':");

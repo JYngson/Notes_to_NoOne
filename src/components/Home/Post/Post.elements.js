@@ -40,3 +40,7 @@ export const PostDesc = styled.p`
   height: 70%;
   margin-top: 24px;
 `;
+
+export const PostId = styled.input`
+  display: none;
+`;

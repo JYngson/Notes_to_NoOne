@@ -7,6 +7,7 @@ export const ProfileBox = styled.div`
   width: 100vw;
   min-height: 85vh;
   background-color: #f6f5f5;
+  padding-bottom: 70px;
 `;
 
 export const ProfileBoard = styled.div`
@@ -16,6 +17,7 @@ export const ProfileBoard = styled.div`
   background-color: white;
   flex-direction: column;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-top: 20px;
+  padding: 1% 0%;
 `;
