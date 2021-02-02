@@ -10,7 +10,6 @@ export default function ProfileUpdate() {
   const { currentUser, updateEmail, updatePassword } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("Success!");
   const history = useHistory();
 
   function handleSubmit(e) {
@@ -39,6 +38,8 @@ export default function ProfileUpdate() {
       .finally(() => {
         setLoading(false);
       });
+
+    history.push("/");
   }
 
   return (
@@ -52,7 +53,6 @@ export default function ProfileUpdate() {
             <Card.Body>
               <h2 className="text-center mb-4">Update Profile</h2>
               {error && <Alert variant="danger">{error}</Alert>}
-              {message && <Alert variant="success">{message}</Alert>}
               <Form onSubmit={handleSubmit}>
                 <Form.Group id="email">
                   <Form.Label>Email</Form.Label>

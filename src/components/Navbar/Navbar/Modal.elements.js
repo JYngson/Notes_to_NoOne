@@ -71,3 +71,38 @@ export const ModalButton = styled.button`
     color: purple;
   }
 `;
+
+export const ErrorModal = Modal.styled`
+display: flex;
+width:50vw;
+height: 20vh;
+background: white;
+border: 3px solid #779ed7;
+padding: 2%;
+border-radius: 10px;
+`;
+
+export const ErrorTitleBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+`;
+
+export const ErrorTitle = styled.p`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2%;
+  width: 90%;
+  height: 100%;
+  font-size: 1rem;
+`;
+
+export const ErrorClose = styled(CloseSquareOutline)`
+  width: 10%;
+  height: 100%;
+  &:hover {
+    color: red;
+  }
+`;

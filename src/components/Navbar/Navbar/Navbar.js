@@ -20,29 +20,18 @@ import {
   ModalClose,
   ModalDescription,
   ModalButton,
+  ErrorModal,
+  ErrorTitleBox,
+  ErrorTitle,
+  ErrorClose,
 } from "./Modal.elements";
-
-import Modal from "react-modal";
 
 export default function Navbar() {
   const [error, setError] = useState("");
-  const { currentUser, logout } = useAuth();
+  const { logout } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
+  const [errorOpen, setErrorOpen] = useState(false);
   const history = useHistory();
-
-  // let user = app.auth().currentUser;
-
-  // let ref = app.database().ref("users/" + user.uid);
-  // ref.on("value", getData, errData);
-
-  // function getData(data) {
-  //   console.log(data.val());
-  // }
-
-  // function errData(err) {
-  //   console.log("Error.");
-  //   console.log(err);
-  // }
 
   async function handleLogout() {
     setError("");
@@ -51,6 +40,7 @@ export default function Navbar() {
       history.push("/login");
     } catch {
       setError("Error logging out! :(");
+      setErrorOpen(!errorOpen);
     }
   }
 
@@ -60,10 +50,6 @@ export default function Navbar() {
 
     try {
       let user = app.auth().currentUser;
-      // let post = {
-      //   title: e.target.title.value,
-      //   description: e.target.description.value,
-      // };
       console.log(user);
       app
         .database()
@@ -75,7 +61,9 @@ export default function Navbar() {
         });
     } catch {
       setError("Something went horribly, horribly wrong D':");
+      setErrorOpen(!errorOpen);
     }
+    setIsOpen(!isOpen);
   }
 
   function profile() {
@@ -92,6 +80,7 @@ export default function Navbar() {
           <NavbarLogout onClick={handleLogout} />
         </NavbarIcons>
       </NavbarBox>
+
       <StyledModal isOpen={isOpen}>
         <ModalBox onSubmit={submit}>
           <ModalTitleBox>
@@ -105,6 +94,15 @@ export default function Navbar() {
           <ModalButton type="submit">Submit</ModalButton>
         </ModalBox>
       </StyledModal>
+
+      <ErrorModal isOpen={errorOpen}>
+        <ModalBox>
+          <ErrorTitleBox>
+            <ErrorTitle>{error}</ErrorTitle>
+            <ErrorClose onClick={() => setErrorOpen(false)} />
+          </ErrorTitleBox>
+        </ModalBox>
+      </ErrorModal>
     </div>
   );
 }
