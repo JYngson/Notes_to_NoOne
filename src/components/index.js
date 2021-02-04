@@ -5,4 +5,4 @@ export { default as NavAuth } from "./Navbar/NavAuth";
 export { default as PrivateRoute } from "./PrivateRoute/PrivateRoute";
 export { default as Forgot } from "./Forgot/Forgot";
 export { default as ProfileUpdate } from "./ProfileUpdate/ProfileUpdate";
-export { default as Test } from "./Test/Test";
+export { default as ProfilePages } from "./ProfilePages/ProfilePages";

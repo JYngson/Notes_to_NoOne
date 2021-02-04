@@ -16,10 +16,12 @@ export const NavbarBox = styled.section`
 export const NavbarHeader = styled.h1`
   margin: 0 2%;
   font-size: 1.4rem;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const NavbarButton = styled.button`
-  display: none;
   width: 10%;
   height: 85%;
   border: none;
@@ -41,16 +43,23 @@ export const NavbarIcons = styled.div`
 export const NavbarAdd = styled(BookAdd)`
   width: 30px;
   height: 30px;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const NavbarProfile = styled(Profile)`
   width: 30px;
   height: 30px;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const NavbarLogout = styled(LogoutCircleR)`
   width: 30px;
   height: 30px;
+  &:hover {
+    cursor: pointer;
+  }
 `;
-
-

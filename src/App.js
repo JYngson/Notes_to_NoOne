@@ -9,7 +9,7 @@ import {
   PrivateRoute,
   Forgot,
   ProfileUpdate,
-  Test,
+  ProfilePages,
 } from "./components";
 import { AuthProvider } from "./components/contexts/AuthContext";
 
@@ -25,8 +25,7 @@ export default function App() {
             <Route path="/login" component={LoginPage} />
             <Route path="/forgot" component={Forgot} />
             <PrivateRoute path="/myProfile" component={ProfileUpdate} />
-            <Route path="/profile/:id" />
-            <Route path="/test" component={Test} />
+            <Route path="/profile/:id" component={ProfilePages} />
           </Switch>
         </Router>
       </ModalProvider>

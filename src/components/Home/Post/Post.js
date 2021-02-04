@@ -36,12 +36,15 @@ export default function Post() {
           snapshot.val() === null ? null : Object.values(snapshot.val());
         let userPostKeyConvert =
           snapshot.val() === null ? null : Object.keys(snapshot.val());
+        console.log(userPostConvert);
+        console.log(userPostKeyConvert);
 
         if (userPostConvert !== null) {
           userPostConvert.forEach((post, i) => {
             post.postId = userPostKeyConvert[i];
           });
         }
+
         setAllPosts(userPostConvert);
       });
     return ref;
