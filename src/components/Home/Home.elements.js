@@ -6,7 +6,7 @@ export const ProfileBox = styled.div`
   align-items: center;
   width: 100vw;
   min-height: 85vh;
-  background-color: #f6f5f5;
+  background-color: #4c5858;
   padding-bottom: 70px;
 `;
 

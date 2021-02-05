@@ -33,9 +33,13 @@ export default function Post() {
       .on("value", (snapshot) => {
         console.log(snapshot.val());
         let userPostConvert =
-          snapshot.val() === null ? null : Object.values(snapshot.val());
+          snapshot.val() === null
+            ? null
+            : Object.values(snapshot.val()).reverse();
         let userPostKeyConvert =
-          snapshot.val() === null ? null : Object.keys(snapshot.val());
+          snapshot.val() === null
+            ? null
+            : Object.keys(snapshot.val()).reverse();
         console.log(userPostConvert);
         console.log(userPostKeyConvert);
 

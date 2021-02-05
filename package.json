@@ -7,7 +7,7 @@
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.0",
     "bootstrap": "^4.6.0",
-    "firebase": "^8.2.4",
+    "firebase": "^8.2.6",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
     "react-dom": "^17.0.1",
@@ -15,7 +15,7 @@
     "react-scripts": "4.0.1",
     "react-uuid": "^1.0.2",
     "styled-components": "^5.2.1",
-    "styled-icons": "^10.26.0",
+    "styled-icons": "^10.27.0",
     "styled-react-modal": "^2.0.1",
     "uuid": "^8.3.2",
     "web-vitals": "^0.2.4"

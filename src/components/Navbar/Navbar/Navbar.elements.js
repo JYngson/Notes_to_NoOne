@@ -9,6 +9,7 @@ export const NavbarBox = styled.section`
   justify-content: space-between;
   width: 100%;
   height: 15vh;
+  max-height: 100px;
   background-color: white;
   color: #779ed7;
 `;
@@ -23,6 +24,7 @@ export const NavbarHeader = styled.h1`
 
 export const NavbarButton = styled.button`
   width: 10%;
+  max-width: 200px;
   height: 85%;
   border: none;
   border-radius: 10px;
